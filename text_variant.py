@@ -32,9 +32,8 @@ def question_generator(q_list):
         the same knowledge. Generate the variants in json format 
         with keys "variant1" and "variant2".
 
-        Original Question: {question}
+        Original Question: {q}
         """
-        prompt=prompt.format(question=q)
         response = model.generate_content(prompt)
         response_json = json.loads(response.text)
         variant_1.append(response_json.get('variant1'))

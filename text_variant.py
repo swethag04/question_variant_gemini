@@ -1,7 +1,7 @@
 import vertexai
 import json
 
-PROJECT_ID = "steel-topic-421421"
+PROJECT_ID = ""
 LOCATION = "us-central1"
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 

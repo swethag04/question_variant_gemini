@@ -34,7 +34,7 @@ def main():
         # Generate variants for each question 
         variant_1, variant_2 = question_generator(q_list)    
         output = io.StringIO()
-        writer = csv.writer(output)
+        writer = csv.writer(output, delimiter='\t')
         writer.writerow(["question", "variant1", "variant2"])
         for row in zip(q_list, variant_1, variant_2):
             writer.writerow(row)
@@ -45,9 +45,9 @@ def main():
         st.subheader("Output with 2 variants of each question")
         csv_data = output.getvalue()
         st.download_button(
-            label="Download Processed Data as CSV",
+            label="Download Processed Data as TSV",
             data=csv_data,
-            file_name="processed_data.csv",
+            file_name="processed_data.tsv",
             mime="text/csv",
             )
         
